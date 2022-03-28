@@ -16,6 +16,8 @@ let countyPopData
 let canvasState = d3.select('#canvas-state');
 let canvasCounty = d3.select('#canvas-county');
 
+let tooltip = d3.select('#tooltip');
+
 // draw maps
 let drawMap = () => {
 
@@ -43,6 +45,40 @@ let drawMap = () => {
                 return 'limegreen'
             }
         })
+        // highlight areas on mouseover
+        .on('mouseover', function(d, i) {
+            d3.select(this).transition()
+                .duration('50')
+                .attr('opacity', '0.5');
+        })
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                    .duration('50')
+                    .attr('opacity', '1');
+        })
+        // .on('mouseover', (stateDataItem) => {
+        //     tooltip.transition()
+        //         .style('visibility','visible');
+            
+        //     let id = stateDataItem['id']
+        //     let state = statePopData.find((item) => {
+        //         return item['STATE'] === id
+        //     })
+
+        //     tooltip.text(state['NAME'] + ' - ' + state['POPESTIMATE2021'])
+
+        //     d3.select(this).transition()
+        //         .duration('50')
+        //         .attr('opacity', '0.75');
+        // })
+        // .on('mouseout', (stateDataItem) => {
+        //     tooltip.transition()
+        //         .style('visibility', 'hidden')
+
+        //     d3.select(this).transition()
+        //             .duration('50')
+        //             .attr('opacity', '1');
+        // })
 
 // map out county data
     canvasCounty.selectAll('path')
@@ -50,9 +86,28 @@ let drawMap = () => {
         .enter()
         .append('path')
         .attr('d', d3.geoPath())
-}
+        .on('mouseover', function(d, i) {
+            d3.select(this).transition()
+                .duration('50')
+                .attr('opacity', '0.75');
 
-// convert data to js objects
+            tooltip.transition()
+                .duration(50)
+                .style("opacity", 1);
+
+        })
+        .on('mouseout', function (d, i) {
+            d3.select(this).transition()
+                    .duration('50')
+                    .attr('opacity', '1');
+
+            tooltip.transition()
+                .duration(50)
+                .style("opacity", 0);
+        })
+};
+
+// load and convert data to js objects
 d3.json(stateURL).then(
     (data, error) => {
         if (error) {

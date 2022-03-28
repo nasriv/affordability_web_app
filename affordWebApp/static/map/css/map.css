@@ -18,3 +18,9 @@ svg {
     min-width: 975px;
     min-height: 625px;
 }
+
+#tooltip {
+    visibility: hidden;
+    height: auto;
+    width: auto;
+}
