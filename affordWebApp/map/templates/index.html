@@ -1,0 +1,26 @@
+{% extends "base_file.html" %}
+{% load static %}
+{% block addHead_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'map/css/index.css' %}">
+    <title>BaseMap</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+{% endblock %}
+
+{% block body_content %}
+    <h1>US 2021 Population Estimate</h1>
+    <h2>Population by State</h2>
+    <div id="tooltip">
+        
+    </div>
+    <svg id="canvas-state">
+
+    </svg>
+
+    <h2>Population by County</h2>
+    <svg id="canvas-county"></svg>
+{% endblock %}
+
+{% block addScript_content %}
+    <script src="{% static 'map/js/map.js' %}"></script>
+{% endblock %}
