@@ -8,8 +8,10 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Mono', monospace;
+    color: black;
 }
 
+/* main base file paramters */
 h1 {
     font-size: 24pt;
 }
@@ -25,3 +27,61 @@ h3, h4 {
 p {
     font-size: 16pt;
 }
+
+ul, a {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+/* navbar parameters */
+#nav-bar .site-logo {
+    height: 100px;
+    width: auto;
+}
+
+#nav-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 
+#nav-bar .nav-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+#nav-bar .nav-buttons li {
+    padding: 10px;
+} */
+
+/* footer parameters */
+/* 
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer ul {
+    list-style-type: none;
+}
+
+#footer a {
+    text-decoration: none;
+}
+
+#footer p, ul {
+    font-size: 10pt;
+}
+
+#footer .footer-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+} */

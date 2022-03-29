@@ -10,34 +10,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    {% block addHead_content %}{% endblock %}
+    {% block addHead_content %}
+    {% endblock %}
 </head>
 
 <body>
-    <nav class="baseNav">
-        <ul>
-            <li><a href="home">home</a></li>
-            <li><a href="index">map</a></li>
-            <li><a href="#">budget</a></li>
-            <li><a href="about">about</a></li>
-        </ul>
+    <nav>
+        <div id="nav-bar">
+            <img class="site-logo" src="{% static 'map/images/piggy-bank.jpg' %}">
+            <ul class="nav-buttons">
+                <li><a href="home">home</a></li>
+                <li><a href="index">map</a></li>
+                <li><a href="#">budget</a></li>
+                <li><a href="about">about</a></li>
+            </ul>
+            <hr class="horiz-line">
+        </div>
     </nav>
-
     {% block body_content %}
     {% endblock %}
-    
-    <footer class="baseFoot">
-        <ul>
-            <li>Contact</li>
-            <li>Sitemap</li>
-            <li>Privacy Policy</li>
-        </ul>
-        <p id="year"> Copyright &copy
-            <script>
-                var curYear = new Date().getFullYear()
-                document.write(curYear)
-            </script>
-        </p>
+
+    <footer>
+        <div id="footer">
+            <hr class="horiz-line">
+            <ul class="footer-buttons">
+                <li><a href="#">contact</a></li>
+                <li><a href="#">sitemap</a></li>
+                <li><a href="#">privacy policy</a></li>
+                <li><a href="#">data usage</a></li>
+            </ul>
+            <p>copyright &copy
+                <script>
+                    var curYear = new Date().getFullYear()
+                    document.write(curYear)
+                </script>
+            </p>
+        </div>
     </footer>
 </body>
 
