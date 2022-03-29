@@ -89,7 +89,7 @@ let drawMap = () => {
         .on('mouseover', function(d, i) {
             d3.select(this).transition()
                 .duration('50')
-                .attr('opacity', '0.75');
+                .attr('opacity', '0.5');
 
             tooltip.transition()
                 .duration(50)
