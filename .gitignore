@@ -6,6 +6,7 @@
 *.log
 *.pot
 *.pyc
+*.vs
 __pycache__/
 # settings.py
 db.sqlite3
