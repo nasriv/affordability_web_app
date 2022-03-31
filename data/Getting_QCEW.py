@@ -102,3 +102,10 @@ if __name__ == '__main__':
     Maryland_Data = qcewGetAreaData(2015,1, "24000")
     Auto_Manufacturing = qcewGetIndustryData(2015, 1, "3361")
     SizeData = qcewGetSizeData(2015, 6)
+
+    '''
+    Comments:
+    - pull data for 10 states for 1 year
+    - build db schema
+    - move data and load into db 
+    '''
