@@ -6,8 +6,9 @@
 *.log
 *.pot
 *.pyc
+*.vs
 __pycache__/
-settings.py
+# settings.py
 db.sqlite3
 db.sqlite3-journal
 media
